@@ -1,0 +1,535 @@
+body {
+    background-color: white;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    font-family: Montserrat;
+    height: 100vh;
+}
+#app {
+    margin: 0;
+    padding: 0;
+    position: relative;
+    background-color: white;
+    font-family: Montserrat;
+    height: 100vh;
+}
+/* #app::before {
+    content: "";
+    position: absolute;
+    top: 0; 
+    left: 0;
+    width: 100%; 
+    height: 100%;  
+    opacity: .2; 
+    z-index: 0;
+    background: url("pattern.svg"); */
+}
+#landingPage[hidden] {
+    display: none;
+}
+#Form #avatarUploaderLabel[hidden] {
+    display: none;
+}
+#landingPage, #homePage {
+    position: relative;
+    display: block;
+    width: 100vw;
+    height: 100vh;
+}
+#landingPage {
+    background-image: url("./images/brokenHeart.jpg");
+    background-size: 80%;
+    background-repeat: no-repeat;
+    background-position-x: 10%;
+    background-position-y: center;
+}
+#Form {
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    border: 1.5px solid black;
+    background-color: white;
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 50px 20px;
+    border-radius: 5px;
+}
+#Form #error {
+    background-color: red;
+    color: white;
+    font-size: 14px;
+    font-weight: 500;
+    word-wrap: normal;
+    width: 220px;
+    padding: 5px 3px;
+    text-align: center;
+}
+#Form .labelsAndInput  {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+#Form .labelsAndInput label {
+    margin-bottom: 5px;
+    font-weight: 500;
+}
+#Form .labelsAndInput input {
+    margin-bottom: 20px;
+    width: 220px;
+    height: 23px;
+    border-width: 1.5px;
+}
+#Form #avatarUploaderLabel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid black;
+    border-radius: 4px;
+    padding: 10px;
+    margin-bottom: 20px;
+    text-align: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center top;
+    width: 70px;
+    height: 70px;
+}
+#Form h6 {
+    color: rgb(59, 59, 59);
+    padding: 0;
+    margin: 30px 0 10px 0;
+}
+#Form select {
+    margin-bottom: 20px;
+    width: 200px;
+    height: 23px;
+}
+#Form .mainButton {
+    background-color: rgb(59, 105, 255);
+    font-family: Montserrat;
+    font-weight: bold;
+    color: white;
+    border: 0;
+    border-radius: 4px;
+    padding: 8px 15px;
+    cursor: pointer;
+}
+#Form .textButton {
+    background-color: transparent;
+    font-family: Montserrat;
+    font-weight: normal;
+    color: blue;
+    border: 0;
+    cursor: pointer;
+}
+#homePage[hidden] {
+    display: none;
+}
+#homePage {
+    overflow: hidden;
+}
+#myProfilePage #logout{
+    background-image: url("./images/logout.svg");
+    background-size: cover;
+    background-color: transparent;
+    border: 0;
+    width: 40px;
+    height: 40px;
+
+    position: absolute;
+    top: 10px;
+    right: 10px;
+
+    cursor: pointer;
+}
+#homePage #postMakerDiv {
+    background-color: rgba(255, 255, 255, .2);
+    /* background: linear-gradient(90deg, rgba(255,50,50,0.2) 0%, rgba(50,255,50,0.2) 100%); */
+    backdrop-filter: blur(5px);
+    position: absolute;
+    bottom: 0;
+    left: 50%; transform: translateX(-50%);
+    border-radius: 10px 10px 0 0;
+    padding: 10px;
+    width: 30%;
+    box-shadow: 0px 15px 35px rgba(0,0,0,0.5);
+    transition: .5s;
+}
+#homePage #postMakerDiv label {
+    font-size: 12px;;
+}
+#homePage #postMakerDiv div{
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    width: 100%;
+}
+#homePage #postMakerDiv div textarea {
+    width: 100%;
+    height: 20px;
+    text-align: left;
+    resize: none;
+    transition: .5s;
+    border-width: 1.5px;
+    background: linear-gradient(45deg, rgba(77, 187, 235, 1) 0%, rgba(36, 136, 255, 1) 100%);
+}
+#homePage #postMakerDiv div textarea::-webkit-scrollbar-track
+{
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+  background-color: #F5F5F5;
+}
+
+#homePage #postMakerDiv div textarea::-webkit-scrollbar
+{
+  width: 10px;
+  background-color: #F5F5F5;
+}
+
+#homePage #postMakerDiv div textarea::-webkit-scrollbar-thumb
+{
+  background-color: #0ae;
+  
+  background-image: -webkit-gradient(linear, 0 0, 0 100%,
+                     color-stop(.5, rgba(255, 255, 255, .2)),
+             color-stop(.5, transparent), to(transparent));
+}
+#homePage #postMakerDiv div button {
+    border: 0;
+    background-color: transparent;
+    background-image: url("./images/send.svg");
+    background-size: cover;
+    width: 32px;
+    height: 30px;
+    margin: 0 10px;
+    cursor: pointer;
+}
+#homePage #profileButton {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    background-position: center center;
+    background-image: url("./images/avatar.png");
+    background-color: transparent;
+    background-size: cover;
+    border: 0;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+}
+#homePage #feed {
+    background-color: whitesmoke;
+    position: relative;
+    bottom: 0;
+    left: 50%; transform: translateX(-50%);
+    border: none;
+    border-radius: 10px 10px 0 0;
+    padding: 10px;
+    width: 40vw;
+    height: 100vh;
+    overflow: scroll;
+
+    -webkit-box-shadow: 0px 0px 36px -20px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 36px -20px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 36px -20px rgba(0,0,0,0.75);
+}
+#homePage #feed::-webkit-scrollbar-track
+{
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+  background-color: #F5F5F5;
+}
+
+#homePage #feed::-webkit-scrollbar
+{
+  width: 10px;
+  background-color: #F5F5F5;
+}
+
+#homePage #feed::-webkit-scrollbar-thumb
+{
+  background-color: #0ae;
+  
+  background-image: -webkit-gradient(linear, 0 0, 0 100%,
+                     color-stop(.5, rgba(255, 255, 255, .2)),
+             color-stop(.5, transparent), to(transparent));
+}
+@keyframes fade-in {
+    0%   {opacity: 0;}
+    100% {opacity: 1;}
+  }
+
+#showHomePageButton {
+    background-image: url("./images/feed.svg");
+    background-size: cover;
+    position: absolute;
+    border: 0;
+    top: 10px;
+    left: 10px;
+    width: 40px;
+    height: 40px;
+
+    cursor: pointer;
+}
+
+#myProfilePage {
+    overflow: hidden;
+}
+#myProfilePage #section {
+    background-color: whitesmoke;
+    position: relative;
+    left: 50%; transform: translateX(-50%);
+    border: none;
+    border-radius: 10px 10px 0 0;
+    width: 40vw;
+    height: 100vh;
+    overflow-y: scroll;
+    margin: 0;
+
+    -webkit-box-shadow: 0px 0px 36px -20px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 36px -20px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 36px -20px rgba(0,0,0,0.75);
+}
+#myProfilePage #section::-webkit-scrollbar-track
+{
+    box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    background-color: #F5F5F5;
+}
+
+#myProfilePage #section::-webkit-scrollbar
+{
+    width: 10px;
+    background-color: #F5F5F5;
+}
+
+#myProfilePage #section::-webkit-scrollbar-thumb
+{
+    background-color: #0ae;
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, color-stop(.5, rgba(255, 255, 255, .2)), color-stop(.5, transparent), to(transparent));
+}
+#myProfilePage #section #myImage {
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    margin: 20px 0 0 20px;
+}
+#myProfilePage #section #myName {
+    display: inline-block;
+    font-size: 36px;
+    margin: 0;
+    margin-left: 20px;
+    font-weight: 400;
+}
+#myProfilePage #section #myPosts{
+    padding: 20px;
+}
+.smallPost{
+    margin-top: 50px;
+    animation: fade-in .5s;
+    transition: opacity 500ms linear;
+}
+.smallPost p {
+    margin: 0;
+}
+.smallPost hr, .mediumPost hr {
+    border: 0;
+    background-color: skyblue;
+    height: 2px;
+}
+.mediumPost {
+    margin: 30px;
+    padding: 10px;
+    animation: fade-in .5s;
+}
+.mediumPost:last-child {
+    margin-bottom: 100px;
+}
+.mediumPost img {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+.mediumPost h6 {
+    display: inline-block;
+    margin: 0;
+    margin-left: 10px;
+    font-size: 14px;
+}
+.mediumPost p {
+    margin: 10px 40px;
+    font-size: 12px;
+}
+
+.commands {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+.commands button:focus {outline:0;}
+.commands .likeButton {
+    background: url("./images/heart.svg");
+    background-size: cover;
+    border: 0;
+    border-radius: 0;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+.commands .commentsButton {
+    background: url("./images/comments.svg");
+    background-size: cover;
+    border: 0;
+    border-radius: 0;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+.commands .bin {
+    background: url("./images/bin.svg");
+    background-size: cover;
+    border: 0;
+    border-radius: 0;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    margin-left: auto;
+}
+.commands h6 {
+    font-size: 12px;
+    margin: 0;
+    margin-right: 10px;
+    margin-left: 3px;
+    margin-top: 3px;
+}
+.liked {
+    background-image: url("./images/heartFilled.svg") !important;
+}
+#commentsWrapper[hidden] {
+    display: none;
+}
+#commentsWrapper {
+    position: absolute;
+    top: 20%;
+    left: 55%;
+    width: 30vw;
+    height: 70vh;
+    background-color: rgba(255, 255, 255, .000);
+    backdrop-filter: blur(5px);
+    box-shadow: 0px 15px 35px rgba(0,0,0,0.5);
+    display: flex;
+    flex-direction: column;
+    overflow-y: hidden;
+    transition: opacity .4s;
+    opacity: 0;
+    border-radius: 15px;
+}
+#commentsWrapper #comments::-webkit-scrollbar-track
+{
+    box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    background-color: #F5F5F5;
+}
+
+#commentsWrapper #comments::-webkit-scrollbar
+{
+    width: 10px;
+    background-color: #F5F5F5;
+}
+
+#commentsWrapper #comments::-webkit-scrollbar-thumb
+{
+    background-color: #0ae;
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, color-stop(.5, rgba(255, 255, 255, .2)), color-stop(.5, transparent), to(transparent));
+}
+#commentsWrapper #closeComments {
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    width: 25px;
+    height: 25px;
+    background-image: url("./images/close.svg");
+    background-size: cover;
+    border-radius: 50%;
+    border: 0;
+    background-color: transparent;
+    cursor: pointer;
+    outline: none;
+}
+#commentsWrapper #comments {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    word-wrap: break-word;
+    overflow-y: scroll;
+}
+#commentsWrapper #commentMakerDiv {
+    margin-top: auto;
+    background-color: rgba(255, 255, 255, .2);
+    /* background: linear-gradient(90deg, rgba(255,50,50,0.2) 0%, rgba(50,255,50,0.2) 100%); */
+    backdrop-filter: blur(5px);
+    position: absolute;
+    bottom: -10%;
+    left: 50%; transform: translateX(-50%);
+    border-radius: 10px 10px 0 0;
+    padding: 10px;
+    width: 90%;
+    box-shadow: 0px 15px 35px rgba(0,0,0,0.5);
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    box-sizing: border-box;
+    transition: .5s;
+}
+.commentsWrapperAnimation {
+    opacity: 1 !important;
+}
+.postMakerAnimation {
+    bottom: -100px !important;
+}
+.commentMakerAnimation {
+    bottom: 0 !important;
+}
+#commentsWrapper #commentMakerDiv textarea {
+    width: 100%;
+    height: 20px;
+    text-align: left;
+    resize: none;
+    transition: .5s;
+    border-width: 1.5px;
+    background: linear-gradient(45deg, rgba(77, 187, 235, 1) 0%, rgba(36, 136, 255, 1) 100%);
+}
+#commentsWrapper #commentMakerDiv textarea::-webkit-scrollbar-track
+{
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+  background-color: #F5F5F5;
+}
+
+#commentsWrapper #commentMakerDiv textarea::-webkit-scrollbar
+{
+  width: 10px;
+  background-color: #F5F5F5;
+}
+
+#commentsWrapper #commentMakerDiv textarea::-webkit-scrollbar-thumb
+{
+  background-color: #0ae;
+  
+  background-image: -webkit-gradient(linear, 0 0, 0 100%,
+                     color-stop(.5, rgba(255, 255, 255, .2)),
+             color-stop(.5, transparent), to(transparent));
+}
+#commentsWrapper #commentMakerDiv button {
+    border: 0;
+    background-color: transparent;
+    background-image: url("./images/send.svg");
+    background-size: cover;
+    width: 32px;
+    height: 30px;
+    margin: 0 10px;
+    cursor: pointer;
+}

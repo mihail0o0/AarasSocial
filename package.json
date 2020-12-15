@@ -1,0 +1,17 @@
+{
+  "name": "social",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.html",
+  "scripts": {
+    "test": "node index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "mssql": "^6.2.3",
+    "socket.io": "^3.0.3",
+    "validator": "^13.5.2"
+  }
+}
